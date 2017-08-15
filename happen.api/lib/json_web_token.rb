@@ -1,3 +1,4 @@
+# generate json toke
 class JsonWebToken
   class << self
     def render_error(code, title, exception = nil)

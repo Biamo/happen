@@ -1,12 +1,18 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence
+  # over those in config/application.rb.
 
-  # In the development environment your application's code is reloaded on
-  # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
+  # In the development environment your
+  # application's code is reloaded on
+  # every request. This slows down
+  # response time but is perfect for development
+  # since you don't have to restart the
+  # web server when you make code changes.
   config.cache_classes = false
 
-  # Eager load code on boot so JSONAPI-Resources resources are loaded and processed globally
+  # Eager load code on boot so
+  # JSONAPI-Resources resources are
+  # loaded and processed globally
   config.eager_load = true
 
   # Show full error reports.
@@ -34,14 +40,16 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-  # Raise an error on page load if there are pending migrations.
+  # Raise an error on page load if
+  # there are pending migrations.
   config.active_record.migration_error = :page_load
-
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
+  # Use an evented file watcher to
+  # asynchronously detect changes in source code,
+  # routes, locales, etc.
+  # This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

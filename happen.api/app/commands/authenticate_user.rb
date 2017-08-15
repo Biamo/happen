@@ -1,3 +1,4 @@
+# prepare the AuthenticateUser
 class AuthenticateUser
   prepend SimpleCommand
 
