@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'acts_as_tenant'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jsonapi-resources'
 gem 'jwt'
@@ -16,6 +17,7 @@ gem 'simple_command'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'brakeman', :require => false
   gem 'rubocop', require: false
 end
 
