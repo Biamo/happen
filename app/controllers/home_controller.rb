@@ -1,6 +1,13 @@
 class HomeController < ApplicationController
-  layout "home"
 
-  def index  
+  def index
+    render_html
+  end
+
+  private
+  def render_html
+    respond_to do |format|
+      format.html
+    end
   end
 end

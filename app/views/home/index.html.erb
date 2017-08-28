@@ -12,3 +12,8 @@
     <%=link_to "Sign up",new_user_registration_path %>
     <%=link_to "Sign in",new_user_session_path %>
 <% end %>
+
+
+
+<!--Note, pre-rendering set in /config/initializers/react_on_rails.rb -->
+<%= react_component('RouterApp', id: "RouterApp-react-component-0") %>

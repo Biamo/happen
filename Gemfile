@@ -1,54 +1,109 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+ruby "2.4.1"
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+gem "react_on_rails", "8.0.6.rc.1"
+gem "webpacker_lite", "2.1.0"
 
+# Bundle edge Rails instead: gem "rails", github: "rails/rails"
+gem "listen"
+gem "rails", "5.0.3"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
+# Note: We're using sqllite3 for development and testing
+# gem "sqlite3", group: [:development, :test]
+
+gem "mysql2"
+
+gem 'puma'
+
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem "sass-rails"
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-gem 'react_on_rails', '8.0.0'         # use latest gem version, prefer exact version
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'devise', '~> 4.3'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem "uglifier"
+# Use CoffeeScript for .js.coffee assets and views
+gem "coffee-rails"
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
+# Turbolinks makes following links in your web application faster.
+# Read more: https://github.com/turbolinks/turbolinks
+# Get turbolinks from npm!
+# gem 'turbolinks', '>= 5.0.0.beta2'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem "jbuilder"
+gem "redis"
+
+# bundle exec rake doc:rails generates the API under doc/api.
+gem "sdoc", group: :doc
+
+# Use ActiveModel has_secure_password
+# gem "bcrypt", "~> 3.1.7"
+
+# Use Rails Html Sanitizer for HTML sanitization
+gem "rails-html-sanitizer"
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# mini_racer is probably faster than therubyracer
+gem "mini_racer"
+
+gem "autoprefixer-rails"
+
+gem "awesome_print"
+
+gem 'devise'
+
+# jquery as the JavaScript library has been moved under /client and managed by npm.
+# It is critical to not include any of the jquery gems when following this pattern or
+# else you might have multiple jQuery versions.
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # Access an IRB console on exceptions page and /console in development
+  gem "web-console"
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :development, :test do
+  ################################################################################
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem "spring"
+  gem "spring-commands-rspec"
 
-gem 'mini_racer', platforms: :ruby
-gem 'webpacker_lite'
+  ################################################################################
+  # Manage application processes
+  gem "factory_girl_rails"
+  gem "foreman"
+
+  ################################################################################
+  # Linters and Security
+  gem "rubocop", require: false
+  gem "ruby-lint", require: false
+  # Critical that require: false be set! https://github.com/brigade/scss-lint/issues/278
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
+  gem "scss_lint", require: false
+
+  ################################################################################
+  # Favorite debugging gems
+  gem "pry"
+  gem "pry-byebug"
+  gem "pry-doc"
+  gem "pry-rails"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
+
+  ################################################################################
+  # Color console output
+  gem "rainbow"
+end
+
+group :test do
+  gem "capybara"
+  gem "capybara-screenshot"
+  gem "capybara-webkit"
+  gem "chromedriver-helper"
+  gem "coveralls", require: false
+  gem "database_cleaner"
+  gem "generator_spec"
+  gem "launchy"
+  gem "poltergeist"
+  gem "rspec-rails", "~> 3.6"
+  gem "rspec-retry"
+  gem "selenium-webdriver", "<3.0.0"
+end
