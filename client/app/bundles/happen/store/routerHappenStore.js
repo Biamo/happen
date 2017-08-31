@@ -7,12 +7,9 @@ import loggerMiddleware from 'libs/middlewares/loggerMiddleware';
 import reducers, { initialStates } from '../reducers';
 
 export default (props, railsContext) => {
-  const initialComments = props.comments;
-  const { $$commentsState } = initialStates;
+  const { $$happenState } = initialStates;
   const initialState = {
-    $$happenStore: $$happenState.merge({
-      $$happen: initialHappen,
-    }),
+    $$happenStore: $$happenState,
     railsContext,
   };
 

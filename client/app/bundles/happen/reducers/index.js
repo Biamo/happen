@@ -1,12 +1,12 @@
-import happenReducer, { $$initialState as $$commentsState } from './happenReducer';
+import happenReducer, { $$initialState as $$happenState } from './happenReducer';
 import railsContextReducer, { initialState as railsContextState } from './railsContextReducer';
 
 export default {
-  $$commentsStore: happenReducer,
+  $$happenStore: happenReducer,
   railsContext: railsContextReducer,
 };
 
 export const initialStates = {
-  $$commentsState,
+  $$happenState,
   railsContextState,
 };

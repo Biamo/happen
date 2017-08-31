@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+  include ReactOnRails::Controller
 
   def index
+    redux_store("routerHappenStore")
     render_html
   end
 

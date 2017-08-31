@@ -2,13 +2,25 @@
 <html>
   <head>
     <title>Happen</title>
-    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag('vendor-bundle',
+    media: 'all',
+    'data-turbolinks-track': true) %>
+    <%= stylesheet_pack_tag('app-bundle',
+    media: 'all',
+    'data-turbolinks-track': true) %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag('vendor-bundle', 'data-turbolinks-track': true) %>
+    <%= javascript_pack_tag('app-bundle', 'data-turbolinks-track': true) %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= react_component "NavigationBarApp" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <!-- This is a placeholder for ReactOnRails to know where to render the store props for
+         client side hydration -->
+    <%= redux_store_hydration_data %>
   </body>
 </html>

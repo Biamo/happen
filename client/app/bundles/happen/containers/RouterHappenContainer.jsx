@@ -8,33 +8,35 @@ import { defaultLocale } from 'libs/i18n/default';
 import { translations } from 'libs/i18n/translations';
 import BaseComponent from 'libs/components/BaseComponent';
 
+import HappenScreen from '../components/HappenScreen/HappenScreen';
+
 global.Intl = Intl;
 
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
   // return { data: state.$$happenStore };
-  return {};
+  return { data: state.$$happenStore };
 }
 
 class RouterHappenContainer extends BaseComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    data: PropTypes.object.isRequired,
     location: PropTypes.shape({
       state: PropTypes.object,
     }).isRequired,
   };
 
   render() {
+    debugger
     const { dispatch, data } = this.props;
-    const actions = bindActionCreators(commentsActionCreators, dispatch);
+    const actions = bindActionCreators( dispatch);
     const locationState = this.props.location.state;
     const locale = data.get('locale') || defaultLocale;
     const messages = translations[locale];
 
     return (
       <IntlProvider locale={locale} key={locale} messages={messages}>
-        <CommentScreen {...{ actions, data, locationState }} />
+        <HappenScreen {...{  data, locationState }} />
       </IntlProvider>
     );
   }

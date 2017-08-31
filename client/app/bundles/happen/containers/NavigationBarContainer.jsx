@@ -10,7 +10,6 @@ function stateToProps(state) {
   // Which part of the Redux global state does our component want to receive as props?
   if (state.$$happenStore) {
     return {
-      commentsCount: state.$$happenStore.get('$$happen').size,
       pathname: state.railsContext.pathname,
     };
   }
@@ -19,15 +18,14 @@ function stateToProps(state) {
 
 class NavigationBarContainer extends BaseComponent {
   static propTypes = {
-    commentsCount: PropTypes.number.isRequired,
     pathname: PropTypes.string.isRequired,
   };
 
   render() {
-    const { commentsCount, pathname } = this.props;
+    const { pathname } = this.props;
 
     return (
-      <NavigationBar {...{ commentsCount, pathname }} />
+      <NavigationBar {...{ pathname }} />
     );
   }
 }
