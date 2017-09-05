@@ -6,6 +6,11 @@ class HomeController < ApplicationController
     render_html
   end
 
+  def welcome
+    redux_store("routerHappenStore")
+    render_html
+  end
+
   private
   def render_html
     respond_to do |format|

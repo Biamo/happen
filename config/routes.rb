@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'home#index'
+  root 'home#welcome'
 
   get 'hello_world', to: 'hello_world#index'
   get 'home', to:'home#index'

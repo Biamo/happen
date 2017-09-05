@@ -1,0 +1,73 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/amir/source/happen/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/amir/source/happen/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/amir/source/happen/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/amir/source/happen/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/amir/source/happen/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/amir/source/happen/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/amir/source/happen/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/amir/source/happen/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/amir/source/happen/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1504580542
+  }
+}
