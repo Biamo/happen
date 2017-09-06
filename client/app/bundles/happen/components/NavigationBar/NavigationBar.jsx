@@ -23,16 +23,16 @@ const NavigationBar = (props) => {
             data-target="#bs-example-navbar-collapse-1"
           >
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar" />
-            <span className="icon-bar" />
-            <span className="icon-bar" />
           </button>
           <a className="navbar-brand" href="/">Happen</a>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
             <li className={classNames({ active: (pathname === paths.ROUTER_PATH) })}>
-              <a href={paths.ROUTER_PATH}>React Router Demo</a>
+              <a href={paths.ROUTER_PATH}>Home</a>
+            </li>
+            <li className={classNames({ active: (pathname === paths.WELCOME_PATH) })}>
+              <a href={paths.WELCOME_PATH}>Welcome</a>
             </li>
           </ul>
         </div>

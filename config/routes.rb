@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'home#welcome'
+  root 'home#index'
 
-  get 'hello_world', to: 'hello_world#index'
   get 'home', to:'home#index'
+  get 'home/welcome', to:'home#welcome'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
