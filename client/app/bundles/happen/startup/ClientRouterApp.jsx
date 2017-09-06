@@ -7,7 +7,6 @@ import routes from '../routes/routes';
 
 export default (_props, _railsContext) => {
   const store = ReactOnRails.getStore('routerHappenStore');
-debugger
   return (
     <Provider store={store}>
       <BrowserRouter>

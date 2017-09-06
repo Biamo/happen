@@ -27,7 +27,6 @@ class RouterHappenContainer extends BaseComponent {
   };
 
   render() {
-    debugger
     const { dispatch, data } = this.props;
     const actions = bindActionCreators( dispatch);
     const locationState = this.props.location.state;

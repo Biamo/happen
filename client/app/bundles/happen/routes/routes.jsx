@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import TestReactRouter from '../components/TestReactRouter/TestReactRouter';
 import TestReactRouterRedirect from '../components/TestReactRouterRedirect/TestReactRouterRedirect';
@@ -22,6 +22,7 @@ export default (
         path="/react-router/redirect"
         component={TestReactRouterRedirect}
       />
+      <Redirect to="/" />
     </Switch>
   </Layout>
 );
